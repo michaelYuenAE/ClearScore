@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ClearScore</string>
+    <string name="get_info">Get your credit info</string>
+    <string name="click_button">Click below button to get your credit info</string>
+    <string name="get">Get</string>
+    <string name="credit_score">Credit Score</string>
+    <string name="total_score_out_of">Out of %s</string>
+    <string name="your_score_is">Your credit score is </string>
+    <string name="error">Error occurs</string>
+</resources>

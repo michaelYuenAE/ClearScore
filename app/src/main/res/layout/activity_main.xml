@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="showScore"
+            type="java.lang.Boolean"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tv_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:text="@string/click_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{showScore ? View.GONE : View.VISIBLE}"
+            android:layout_marginLeft="20dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:background="@drawable/cycle_shape"
+            style="?android:attr/progressBarStyleHorizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{showScore ? View.VISIBLE : View.GONE}"
+            android:layout_marginBottom="16dp"
+            android:max="100"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/tv_your_credit"
+            android:text="@string/your_score_is"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{showScore ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/tv_score"
+            app:layout_constraintStart_toStartOf="@id/tv_score"
+            app:layout_constraintEnd_toEndOf="@id/tv_score"/>
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@string/credit_score"
+            android:textColor="#00FF00"
+            android:visibility="@{showScore ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_out_of"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{showScore ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/tv_score"
+            app:layout_constraintStart_toStartOf="@id/tv_score"
+            app:layout_constraintEnd_toEndOf="@id/tv_score"/>
+
+        <Button
+            android:id="@+id/bt_getInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
